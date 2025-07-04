@@ -2,6 +2,8 @@ const container = document.querySelector(".container");
 const header = document.querySelector(".header");
 const popUpBtn = document.createElement("button");
 popUpBtn.textContent = "Click to enter number of squares";
+const clearBtn = document.createElement("button");
+clearBtn.textContent = "Clear the grid";
 let noOfSquares;
 header.appendChild(popUpBtn);
 popUpBtn.addEventListener("click", () => {
@@ -18,6 +20,13 @@ popUpBtn.addEventListener("click", () => {
             rowBox.appendChild(columnBox);
         }
     }
+    popUpBtn.disabled = true;
+    header.appendChild(clearBtn);
 });
+clearBtn.addEventListener("click", () => {
+    container.innerHTML = "";
+    clearBtn.remove();
+    popUpBtn.disabled = false;
+})
 container.setAttribute("style", "display: flex; flex-direction: column; height: 500px; width: 500px; background-color: white;");
 
