@@ -6,12 +6,17 @@ function getRandomInt(min, max) {
 
 const container = document.querySelector(".container");
 const header = document.querySelector(".header");
+const buttons = document.createElement("div");
+buttons.classList.add("buttons");
+header.appendChild(buttons);
 const popUpBtn = document.createElement("button");
-popUpBtn.textContent = "Click to enter number of squares";
+popUpBtn.classList.add("pop");
+popUpBtn.textContent = "Enter No.of Squares";
 const clearBtn = document.createElement("button");
+clearBtn.classList.add("clear");
 clearBtn.textContent = "Clear the grid";
 let noOfSquares;
-header.appendChild(popUpBtn);
+buttons.appendChild(popUpBtn);
 popUpBtn.addEventListener("click", () => {
     noOfSquares = prompt("Enter number of squares per side:");
     if (noOfSquares>=1 && noOfSquares<=100){
@@ -34,7 +39,7 @@ popUpBtn.addEventListener("click", () => {
             }
         }
         popUpBtn.disabled = true;
-        header.appendChild(clearBtn);
+        buttons.appendChild(clearBtn);
     }
     else {
         alert("Number Should be between 1 and 100!");
@@ -45,5 +50,5 @@ clearBtn.addEventListener("click", () => {
     clearBtn.remove();
     popUpBtn.disabled = false;
 })
-container.setAttribute("style", "display: flex; flex-direction: column; height: 500px; width: 500px; background-color: white;");
+
 

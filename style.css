@@ -2,11 +2,44 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
     background-color: gray;
 }
 .header {
     color: white;
-    font-size: larger;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    margin-top: 40px;
+}
+
+.buttons {
+    display: flex;
+    height: 60px;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: "Doto", sans-serif;
+}
+
+.pop {
+    flex-grow: 2;
+    font-size: 150%;
+    color: gray;
+    font-family: "Teko", sans-serif;
+}
+
+.clear {
+    flex-grow: 1;
+    font-size: 150%;
+    color: gray;
+    font-family: "Teko", sans-serif;
+}
