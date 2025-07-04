@@ -1,3 +1,9 @@
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const container = document.querySelector(".container");
 const header = document.querySelector(".header");
 const popUpBtn = document.createElement("button");
@@ -17,7 +23,12 @@ popUpBtn.addEventListener("click", () => {
             const columnBox = document.createElement("div");
             columnBox.setAttribute("style", `height: ${length}px; width: ${length}px;`);
             columnBox.classList.add("box");
-            columnBox.addEventListener("mouseover", () => {columnBox.style.backgroundColor = "black";});
+            columnBox.addEventListener("mouseover", () => {
+                const r = getRandomInt(0, 255);
+                const g = getRandomInt(0, 255);
+                const b = getRandomInt(0, 255);
+                columnBox.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            });
             rowBox.appendChild(columnBox);
         }
     }
